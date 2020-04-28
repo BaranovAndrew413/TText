@@ -21,7 +21,7 @@ void TText::GoFirstLink()
 void TText::GoDownLink(){
 	if (!pCurr)
 		throw - 1;
-	if (pCurr->pDown)
+	if (!pCurr->pDown)
 		return;
 	stack.Push(pCurr);
 	pCurr = pCurr->pDown;
@@ -204,4 +204,10 @@ void TText::PrintRec(TTextLink* pWC) {
 		level++;
 	}
 	level--;
+}
+void TText::GoNextLink() {
+	if (!pCurr) throw - 1;
+	if (!pCurr->pNext) return;
+	stack.Push(pCurr);
+	pCurr = pCurr->pNext;
 }

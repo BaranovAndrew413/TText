@@ -17,6 +17,7 @@ public:
 	int IsEnd();
 	int Reset();
 	int GoNext();
+	void GoNextLink();
 	void GoPrevLink();
 	void SetLine(string str1);
 	string  GetLine();
